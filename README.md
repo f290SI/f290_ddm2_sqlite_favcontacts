@@ -375,7 +375,7 @@ Com base nesta tela, iremos uilizar a nossa classe `OpenSQLiteHelper` e persisti
 
 ## AtividadeOpenHelper
 
-### Adicionar navegação ao FloatingActionButton da tela principal [main_screen.dart]
+### Adicionar navegação ao FloatingActionButton da tela principal [home_page.dart]
 Adicione ao floatingActionButton o trecho de navegação:
 
 ```dart
@@ -524,7 +524,7 @@ Neste trecho estamos simplesmente preenchendo o objeto contato e fazendo sua dev
 
 Precisamos ajustar o recebimento do objeto contato para podermos armazená-lo, então primeiramente vamos refatorar a chamada da tela de cadastro.
 
-1. Acesse a classe `main_screen.dart`.
+1. Acesse a classe `home_page.dart`.
 2. Crie uma instância do nosso Helper.
 2. Adicione ao final da classe o método obterTodosContatos(), lembre-se no final da classe, mas dentro da classe.
 
@@ -776,7 +776,7 @@ Notem que adicionamos apenas o caminho para o arquivo da imagem.
 ## Ajustar a exibição dos Cards para exibir as fotografias.
 Agora que nossos contatos podem conter fotografias, precisamos ajustar sua exibição de forma que os contatos que possuam fotografias possam exibi-las.
 
-1. Abra o arquivo `main_screen.dart`.
+1. Abra o arquivo `home_page.dart`.
 2. Dentro da propriedade `itemBuilder`, substitua o widget Image.asset() por um Container personalizado para a exibição da imagem do contato. Adicione o código abaixo em substituição ao bloco do Image.asset().
 
 ```dart
