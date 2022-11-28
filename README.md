@@ -382,12 +382,12 @@ Adicione ao floatingActionButton o trecho de navegação:
 
 import 'package:flutter/material.dart';
 
-class MainScreen extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
@@ -518,7 +518,7 @@ onPressed: () {
 },
 ```
 
-Neste trecho estamos simplesmente preenchendo o objeto contato e fazendo sua devolução para a tela anterior; a main_sceeen irá fazer a persistencia dos dados, até conhecermos outros Frameworks para trabalhar com fluxo de dados entre telas nas proximas aulas; neste momento `Navigator.pop(context, contato);` está devolvendo um objeto contato preenchido para a `MainScreen()`.
+Neste trecho estamos simplesmente preenchendo o objeto contato e fazendo sua devolução para a tela anterior; a main_sceeen irá fazer a persistencia dos dados, até conhecermos outros Frameworks para trabalhar com fluxo de dados entre telas nas proximas aulas; neste momento `Navigator.pop(context, contato);` está devolvendo um objeto contato preenchido para a `HomePage()`.
 
 ## Agora sim, adicionar o SQLite!
 
@@ -529,12 +529,12 @@ Precisamos ajustar o recebimento do objeto contato para podermos armazená-lo, e
 2. Adicione ao final da classe o método obterTodosContatos(), lembre-se no final da classe, mas dentro da classe.
 
 ```dart
-class MainScreen extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _HomePageState extends State<HomePage> {
   //Adicione neste ponto do código o SQLiteOpenHelper
   final SQLiteOpenHelper helper = SQLiteOpenHelper();
   //Crie uma lista para armazenar os dados vindos do banco de dados.
@@ -623,7 +623,7 @@ Vamos criar esta lista agora.
 
 ## Criar lista de contatos para exibição.
 
-1. Acesse `MainScreen` e substitua o código do body por este:
+1. Acesse `HomePage` e substitua o código do body por este:
 
 ```dart
 body: ListView.builder(
@@ -716,7 +716,7 @@ GestureDetector(
       image: DecorationImage(
         image: contatoEdicao.caminhoImagem != null
             ? FileImage(File(contatoEdicao.caminhoImagem))
-            : AssetImage('assets/images/social.png') as ImagaProvider,
+            : AssetImage('assets/images/social.png') as ImageProvider,
         fit: BoxFit.cover,
       ),
     ),
@@ -789,7 +789,7 @@ Container(
       image: listContatos[index].caminhoImagem != null
           ? FileImage(
               File(listContatos[index].caminhoImagem))
-          : AssetImage('assets/images/social.png'),
+          : AssetImage('assets/images/social.png') as ImageProvider,
       fit: BoxFit.cover,
     ),
   ),
