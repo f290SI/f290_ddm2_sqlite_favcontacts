@@ -74,7 +74,7 @@ O pacote `sqflite` no possibilida a mesma sintaxe de gerenciamento de banco de d
 ou digite o comando abaixo no shell
 
 ```shell
-flutter pub add sqlite
+flutter pub add sqflite
 ```
 
 ### Crie o SQLiteOpenHelper
@@ -747,7 +747,7 @@ onTap: () {
     // Atualizamos os dados da tela.
     setState(() {
       _caminhoImagem = value;
-      //Depois de armazenae globalmente a referencia do arquivo, atualizamos o atributo caminhoImagem do contato, para recupera o arquivo para exibiçao.
+      //Depois de armazene globalmente a referencia do arquivo, atualizamos o atributo caminhoImagem do contato, para recupera o arquivo para exibiçao.
       contatoEdicao.caminhoImagem = _caminhoImagem.path;
     });
   });
