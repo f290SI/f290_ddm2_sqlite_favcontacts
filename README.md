@@ -801,7 +801,7 @@ Para que possamos visualizar e editar os dados dos contatos, vamos carregá-los 
 Vamos alterar a tela de adição de contatos para preencher os campos de entrada de texto com os dados do contato.
 
 1. Abra o arquivo `adicionar_contato.dart`.
-2. Altere o método `initState` com o código:
+2. Adicione o método `initState` com o código abaixo:
 
 ```dart
 @override
