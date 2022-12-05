@@ -447,6 +447,9 @@ class CustomTextField extends StatelessWidget {
 ```dart
 class AdicionarContatoScreen extends StatefulWidget {
 
+  final Contato? contato;
+  const AdicionarContatoScreen({super.key, required this.contato});
+
   @override
   _AdicionarContatoScreenState createState() => _AdicionarContatoScreenState();
 }
@@ -473,11 +476,13 @@ class _AdicionarContatoScreenState extends State<AdicionarContatoScreen> {
           CustomTextField(hint: "Telefone", icon: Icons.phone, controller: telefoneController,),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: RaisedButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              color: Colors.teal.shade200,
+            child: ElevatedButton(
+            style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18),
+                  ),
+                )),
               onPressed: () {},
               child: Text('Salvar', style: TextStyle(color: Colors.black)),
             ),
@@ -494,8 +499,6 @@ class _AdicionarContatoScreenState extends State<AdicionarContatoScreen> {
 
 # Adicionar o SQLite
 Vamos adicionar as funcionalidade dos SQLite incluindo o código necessário para a persistência de dados.
-
-1. Altere o construtor `AdicionarContatoScreen` adicionando na linha 7, o código abaixo.
 
 ```dart
 final Contato contato;
