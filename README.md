@@ -500,15 +500,11 @@ class _AdicionarContatoScreenState extends State<AdicionarContatoScreen> {
 # Adicionar o SQLite
 Vamos adicionar as funcionalidade dos SQLite incluindo o código necessário para a persistência de dados.
 
-```dart
-final Contato contato;
-AdicionarContatoScreen({this.contato});
-```
 A partir de agora, ele pode receber um objeto contato em sua criação, será útil para a edição.
 
 ## Adicionar funcionalidade ao botão Salvar
 
-Dentro do callback do RaisedButton Salvar, na propriedade onPressed, adicione apenas o conteúdo entre as chaves:
+Dentro do callback do ElevatedButton Salvar, na propriedade onPressed, adicione apenas o conteúdo entre as chaves:
 
 ```dart
 onPressed: () {
@@ -677,6 +673,29 @@ body: ListView.builder(
 ),
 
 ```  
+  
+2. Adicione uma imagem para o placeholder da imagem do usuário. 
+  
+No Arquivo pubspec.yaml descomente o trecho abaixo.
+  
+```yaml
+# assets:
+#    - images/a_dot_burr.jpeg
+```
+Por este 
+  
+ ```yaml
+   assets:
+    - assets/images/ 
+ ```
+ 
+3. Adicione uma imagem de sua preferencia no diretório `assets/images`; crie este diretório no mesmo nível da pasta `lib`.
+4. Execute o comando abaixo
+  
+```shell
+flutter pub get  
+```
+  
 O ListView.builder, como vimos na aula anterior, é responsável por criar uma coleção de Widgets e fazer o `binding` de dados em cada um dos elementos desta coleção.
 O método carrega uma lista com os dados do banco e a partir dela, preenchemos os objetos da lista pelo callback `itemBuilder:`.
 Estamos utilizando uma imagem comum a cada contato; ela está no diretório `images` aqui dentro do gitlab.
@@ -699,8 +718,14 @@ Iremos armazenar fotografias com o pacote `Image Picker` do `pub.dev`, este paco
   sqflite: ^2.2.0+3
   image_picker: ^0.8.6
 ```
+  
+ Ou execute os comando no shell
+  
+ ```shell
+ flutter pub add image_picker
+ ```
 
-2. Salve o arquivo ou vá ao terminal e execute o comando `pub get`.
+2. Salve o arquivo ou vá ao terminal e execute o comando `flutter pub get`.
 
 ## Atualizar a tela de adição de contatos para o input de uma imagem capturada a partir da camera do dispositivo.
 
